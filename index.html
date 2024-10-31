@@ -1,0 +1,298 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/glightbox/dist/css/glightbox.min.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+
+<body>
+    <header>
+        <nav class="navbar" id="home">
+            <div class="logo">
+                <img class="navbar-img" src="image/logo.webp" alt="logo portefolio">
+            </div>
+            <ul class="navbar-lien">
+                <li class="navbar_item slideInDown1">
+                    <a href="#home" aria-current="page" class="navbar_lien active">Accueil</a>
+                </li>
+                <li class="navbar_item slideInDown2">
+                    <a href="#profil" aria-current="page" class="navbar_lien active">Profil</a>
+                </li>
+                <li class="navbar_item slideInDown3">
+                    <a href="#skills" aria-current="page" class="navbar_lien active">Compétences</a>
+                </li>
+                <li class="navbar_item slideInDown4">
+                    <a href="#portfolio" aria-current="page" class="navbar_lien active">Portfolio</a>
+                </li>
+                <li class="navbar_item slideInDown5">
+                    <a href="#contact" aria-current="page" class="navbar_lien active">Contact</a>
+                </li>
+            </ul>
+            <button class="navbar_fermer">
+                <span class="fermer-bar"></span>
+            </button>
+        </nav>
+    </header>
+
+    <section>
+        <div data-aos="flip-left" id="about-me">
+            <div class="presentation">
+                <p class="greet">
+                    Hello
+                    <span class="txt-rotate" data-rotate='["Recruteur ?!", "Visiteur!"]'>
+                        <span class="wrap"></span>
+                    </span>
+                    <span class="wrap-border"></span>
+                </p>
+                <div class="txt-display" data-aos="fade-left">
+                    <h1>Sullivan DEWINNE</h1>
+                    <h2>Développeur Web</h2>
+                </div>
+                <button class="btn btn-about-me lightblue-btn">
+                    <a href="#profil">Plus d'infos</a>
+                </button>
+            </div>
+        </div>
+    </section>
+
+    <section id="profil">
+        <div class="profil-container" data-aos="fade_up">
+            <div class="profil-presentation">
+                <div class="title">
+                    <h2 class="profil-title">
+                        A propos de moi
+                        <span>
+                            <span class="display-dots">.</span>
+                            <span class="display-dots">.</span>
+                            <span class="display-dots">.</span>
+                        </span>
+                    </h2>
+                </div>
+                <div class="profil-pict">
+                    <img class="profil-pict-main" src="image/homme.png" alt="homme">
+                </div>
+                <div class="profil-presentation-txt">
+                    <p>Bonjour,</p>
+                    <p>
+                        Je suis en formation
+                        <span>développeur web et web mobile</span>
+                        et vis actuellement sur Cahors.
+                    </p>
+                    <p>
+                        J'ai toujours été passionné par le numérique, la nouvelle technologie,
+                        quand j'ai découvert le monde de la programmation, j'ai tout de suite été intéressé par ça.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="status">
+        <div class="status-content">
+            <div class="status-item">
+                <h2>Actuellement :</h2>
+                <p>En recherche d'un stage</p>
+            </div>
+        </div>
+    </section>
+
+    <section id="skills">
+        <div class="skills-title">
+            <h2>
+                Compétences
+                <span>
+                    <span class="display-dots">.</span>
+                    <span class="display-dots">.</span>
+                    <span class="display-dots">.</span>
+                </span>
+            </h2>
+        </div>
+        <div class="skills-container">
+            <div class="skill-box">
+                <div class="box">
+                    <h3>Front-end</h3>
+                    <div class="skill-item">
+                        <div class="icon">
+                            <i class="fab fa-html5"></i>
+                        </div>
+                        <div class="skill-bar">
+                            <div class="skill-bar-chargement html_skill"></div>
+                        </div>
+                    </div>
+                    <div class="skill-item">
+                        <div class="icon">
+                            <i class="fab fa-css3-alt"></i>
+                        </div>
+                        <div class="skill-bar">
+                            <div class="skill-bar-chargement css_skill"></div>
+                        </div>
+                    </div>
+                    <div class="skill-item">
+                        <div class="icon">
+                            <i class="fab fa-js-square"></i>
+                        </div>
+                        <div class="skill-bar">
+                            <div class="skill-bar-chargement javascript_skill"></div>
+                        </div>
+                    </div>
+                    
+                    <div class="cvdownload">
+                        <a href="image/cvsullivan.png" class="glightbox" id="cvThumbnail">
+                            <img class="cvdownload-img" src="image/cvsullivan.png" alt="CV DEWINNE Sullivan">
+                        </a>
+                        <button class="btn lightblue-btn">
+                            <a href="cvsullivan.pdf" alt="CV en ligne DEWINNE Sullivan" target="_blank" download>Télécharger CV</a>
+                        </button>
+                    </div>
+
+                    <div id="cvModal" class="modal">
+                        <span class="close">&times;</span>
+                        <img class="modal-content" id="modalCv">
+                        <div id="caption"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="carousel">
+        <div class="carousel-container">
+            <div class="carousel">
+                <div class="carousel-item">
+                    <blockquote>
+                        "Le code, c'est comme l'humour. Quand il faut l'expliquer, c'est qu'il n'est pas bon."
+                        <cite>— Cory House</cite>
+                    </blockquote>
+                </div>
+                <div class="carousel-item">
+                    <blockquote>
+                        "Les bons programmeurs se soucient du code. Les grands programmeurs se soucient des structures de données et de leurs utilisateurs."
+                        <cite>— Linus Torvalds</cite>
+                    </blockquote>
+                </div>
+                <div class="carousel-item">
+                    <blockquote>
+                        "N'essayez pas d'être intelligent. Essayez simplement d'écrire du code clair."
+                        <cite>— Grady Booch</cite>
+                    </blockquote>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="portfolio">
+        <h2 class="title">
+            Portfolio
+            <span>
+                <span class="display-dots">.</span>
+                <span class="display-dots">.</span>
+                <span class="display-dots">.</span>
+            </span>
+        </h2>
+        <div class="thumbs-container">
+            <div class="thumb">
+                <a href="https://github.com/Sullivan-devweb" target="_blank" rel="noreferrer">
+                    <div class="thumb-preview">
+                        <p>Portfolio | Page d'un journal</p>
+                    </div>
+                    <img src="image/singlepost.png" alt="page d'un journal" class="small-image">
+                </a>
+            </div>
+            <div class="thumb">
+                <a href="https://github.com/Sullivan-devweb" target="_blank" rel="noreferrer">
+                    <div class="thumb-preview">
+                        <p>Portfolio | Portfolio</p>
+                    </div>
+                    <img src="image/portfolio.png" alt="Portfolio" class="small-image">
+                </a>
+            </div>
+            <div class="thumb">
+                <a href="https://github.com/Sullivan-devweb" target="_blank" rel="noreferrer">
+                    <div class="thumb-preview">
+                        <p>Portfolio | Morpion</p>
+                    </div>
+                    <img src="image/morpion.png" alt="Morpion" class="small-image">
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <section id="contact">
+        <h2 class="title">
+            Contactez-moi
+            <span>
+                <span class="display-dots">.</span>
+                <span class="display-dots">.</span>
+                <span class="display-dots">.</span>
+            </span>
+        </h2>
+        <p class="contact-description">
+            Vous pouvez me contacter via le formulaire ou les liens proposés, je vous répondrai
+            dans les meilleurs délais.
+        </p>
+        <form class="form-box">
+            <div class="form content">
+                <div class="form-content-detail">
+                    <input type="text" name="username" placeholder="Nom" required>
+                </div>
+                <div class="form-content-detail">
+                    <input type="text" name="user_society" placeholder="Société" required>
+                </div>
+                <div class="form-content-detail">
+                    <input type="tel" name="user_phone" placeholder="Téléphone" required>
+                </div>
+                <div class="form-content-detail">
+                    <input id="mail-box" type="email" name="user_email" placeholder="Email" required>
+                </div>
+                <div class="form-content-detail">
+                    <textarea name="user_message" placeholder="Message" required></textarea>
+                </div>
+                <button class="btn lightblue-btn submit-form-btn" type="submit">Soumettre</button>
+            </div>
+            <div class="form-content-right">
+                <div class="contact-box">
+                    <div class="contact-detail-item">
+                        <i class="fas fa-envelope" aria-hidden="true"></i>
+                        <p>dewinnesullivan10@gmail.com</p>
+                    </div>
+                    <div class="contact-detail-item">
+                        <i class="fas fa-phone" aria-hidden="true"></i>
+                        <p>06 95 25 85 59</p>
+                    </div>
+                    <div class="contact-detail-item">
+                        <i class="fas fa-home" aria-hidden="true"></i>
+                        <p>46000 Cahors</p>
+                    </div>
+                    <div class="icon">
+                        <a href="https://github.com/Sullivan-devweb" target="_blank" rel="noreferrer">
+                            <i class="fa-brands fa-github _social_icon" aria-hidden="true"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </form>
+    </section>
+
+    <section class="footer">
+        <p id="copyright">© Copyright 2024 | Sullivan DEWINNE | Tous droits réservés</p>
+    </section>
+
+    <script src="script.js"></script>
+    <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+    <script src="https://cdn.jsdelivr.net/gh/mcstudios/glightbox/dist/js/glightbox.min.js"></script>
+    <script>
+        AOS.init({
+            duration: 1500,
+        });
+    </script>
+    <a href="#home" id="backToTop" title="Remonter">
+        <i class="fas fa-arrow-up"></i>
+    </a>
+</body>
+
+</html>

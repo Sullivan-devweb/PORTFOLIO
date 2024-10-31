@@ -1,0 +1,853 @@
+/* Global styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Arial', sans-serif;
+    color: #333;
+    background-color: #f4f4f4;
+    line-height: 1.6;
+}
+
+
+@media only screen and (max-width: 600px) {
+    body {
+        font-size: 14px;
+    }
+
+    button, .btn {
+        font-size: 1rem;
+    }
+}
+
+.display-dots {
+    opacity: 0;
+    animation: dotAnimation 1.5s infinite;
+  }
+
+  .display-dots:nth-child(1) {
+    animation-delay: 0s;
+  }
+
+  .display-dots:nth-child(2) {
+    animation-delay: 0.3s;
+  }
+
+  .display-dots:nth-child(3) {
+    animation-delay: 0.6s;
+  }
+  /* Pour mobile */
+@media only screen and (max-width: 600px) {
+    .navbar-lien {
+        flex-direction: column;
+    }
+    
+    .profil-container, .skills-container, .carousel-container, .thumbs-container {
+        flex-direction: column;
+        align-items: center;
+    }
+    
+    .profil-pict img, .small-image {
+        width: 100%; /* Les images prennent toute la largeur de l'écran */
+    }
+
+    .txt-display h1, .txt-display h2 {
+        font-size: 1.5rem; /* Ajuste la taille des titres */
+    }
+
+    .form-content-detail {
+        width: 100%; /* Formulaire pleine largeur */
+    }
+
+    .contact-detail-item i {
+        font-size: 1.2rem;
+    }
+}
+
+/* Pour tablette */
+@media only screen and (min-width: 600px) and (max-width: 1024px) {
+    .navbar-lien {
+        justify-content: space-between;
+    }
+
+    .profil-container {
+        flex-direction: column;
+    }
+
+    .skills-container {
+        grid-template-columns: 1fr 1fr;
+    }
+
+    .thumb {
+        width: 45%;
+    }
+
+    .txt-display h1, .txt-display h2 {
+        font-size: 2rem; /* Ajuster les titres pour tablette */
+    }
+}
+
+/* Pour desktop */
+@media only screen and (min-width: 1024px) {
+    .navbar-lien {
+        justify-content: space-around;
+    }
+
+    .profil-container {
+        flex-direction: row;
+    }
+
+    .skills-container {
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr;
+    }
+
+    .thumbs-container {
+        display: flex;
+        justify-content: space-around;
+    }
+
+    .thumb {
+        width: 30%;
+    }
+
+    .txt-display h1, .txt-display h2 {
+        font-size: 2.5rem;
+    }
+}
+img {
+    max-width: 100%;
+    height: auto;
+}
+
+
+
+/* Navbar styles */
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #1a1a1a;
+    padding: 10px 20px;
+}
+
+.navbar-img {
+    width: 120px;
+}
+
+.navbar-lien {
+    display: flex;
+    list-style: none;
+    gap: 20px;
+}
+
+.navbar_item a {
+    color: white !important; /* Force la couleur blanche */
+    text-decoration: none;
+    font-size: 18px;
+    transition: color 0.3s ease;
+}
+
+.navbar_item a:hover {
+    color: #1abc9c;
+}
+
+.navbar_fermer {
+    display: none; /* Hide the close button initially */
+}
+.navbar::after {
+    content: "";
+    display: block;
+    position: absolute;
+    bottom: -5px; /* Ajuster l’espace avec la section */
+    left: 0;
+    width: 100%;
+    height: 3px; /* Épaisseur de la ligne */
+    background-color: #00ccff;
+    box-shadow: 0px 0px 8px 2px #00ccff, 0px 0px 15px 3px #00ccff, 0px 0px 30px 5px #00ccff;
+}
+
+/* Hero section */
+#about-me {
+    background: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)), url('image/lignedecode.webp') center/cover no-repeat;
+    color: white;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-size: cover;     
+}
+
+.greet{
+    color: #c6e2ff;
+   
+    font-family: 'PixelFont', monospace; /* Utilise une police pixellisée ou monospace */
+    color: #00ccff; /* Couleur bleue similaire */
+    font-size: 20px; /* Ajuste la taille selon tes besoins */
+    text-transform: uppercase; /* Tout en majuscules */
+  
+    letter-spacing: 2px; /* Espacement des lettres pour un effet espacé */
+  }
+
+
+.presentation {
+    text-align: center;
+    
+}
+
+.presentation h1, .presentation h2 {
+    margin: 10px 0;
+    font-weight: bold;
+}
+
+.btn-about-me {
+    background-color: #1abc9c;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 25px;
+    color: white;
+    font-size: 16px;
+    cursor: pointer;
+    margin-top: 20px;
+    text-transform: uppercase;
+}
+
+.btn-about-me:hover {
+    background-color: #16a085;
+}
+
+.wrap-border {
+    border-right: 2px solid white;
+    animation: blink 0.8s infinite;
+}
+
+@keyframes blink {
+    0% { border-color: white; }
+    50% { border-color: transparent; }
+    100% { border-color: white; }
+}
+@keyframes dotAnimation {
+    0% {
+      opacity: 0;
+    }
+    30% {
+      opacity: 1;
+    }
+    100% {
+      opacity: 0;
+    }
+  }
+  #status {
+    background-image: url('image/background.webp');
+    background-size: cover;
+    background-position: center;
+    padding: 50px 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.status-content {
+    display: flex;
+    flex-direction: column; /* Empile les éléments verticalement */
+    text-align: center;
+    align-items: center;
+    justify-content: center;
+    color: black; /* Couleur du texte */
+    z-index: 1;
+    background-color: rgba(255, 255, 255, 0.8); /* Fond blanc avec opacité */
+    padding: 20px;
+    border-radius: 10px; /* Coins arrondis */
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2); /* Ombre pour donner du relief */
+}
+
+.status-item {
+    margin: 15px 0; /* Marge entre chaque élément de statut */
+}
+
+.status-item h2 {
+    font-size: 20px; /* Taille de la police pour les sous-titres */
+    margin: 0; /* Enlève la marge par défaut */
+}
+
+.status-item p {
+    font-size: 30px; /* Taille de la police pour le texte principal */
+    margin: 5px 0 0; /* Marge au-dessus du texte */
+    font-weight: bold; /* Mettre en gras le texte */
+}
+
+
+
+/* Profile section */
+#profil {
+    padding: 50px 0;
+    background-color: #fff;
+}
+/* Image réduite */
+.cvdownload {
+    flex: 0.5; /* La partie du CV occupe 0.5 part de l'espace disponible */
+    display: flex;
+    flex-direction: column; /* Organise les éléments en colonne */
+    align-items: center; /* Centrer le contenu horizontalement */
+    gap: 20px; /* Espacement entre l'image et le bouton */
+}
+.cvdownload-img {
+    width: 200px; /* Taille réduite de l'image du CV */
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.cvdownload-img:hover {
+    opacity: 0.7;
+}
+
+/* Style du modal (plein écran) */
+.modal {
+    display: none; /* Caché par défaut */
+    position: fixed;
+    z-index: 1000;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.9);
+    overflow: auto;
+}
+
+/* Style de l'image agrandie dans le modal */
+.modal-content {
+    display: block;
+    margin: auto;
+    max-width: 80%;
+    max-height: 80%;
+}
+
+/* Style de la légende (caption) */
+#caption {
+    margin: auto;
+    display: block;
+    text-align: center;
+    color: #ccc;
+    padding: 10px 0;
+}
+
+/* Bouton de fermeture du modal */
+.close {
+    position: absolute;
+    top: 15px;
+    right: 35px;
+    color: #fff;
+    font-size: 40px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.close:hover,
+.close:focus {
+    color: #bbb;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+/* Bouton de téléchargement */
+.lightblue-btn {
+    background-color: #3498db;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    cursor: pointer;
+    text-decoration: none;
+}
+
+.lightblue-btn a {
+    color: white;
+    text-decoration: none;
+}
+
+
+.profil-container {
+    max-width: 1200px;
+    margin: auto;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 50px;
+    justify-content: center;
+    align-items: center;
+}
+
+.profil-presentation img {
+    width: 300px;
+    border-radius: 50%;
+    margin-bottom: 20px;
+}
+
+.profil-presentation h2 {
+    font-size: 36px;
+    margin-bottom: 20px;
+    color: #1abc9c;
+}
+
+.profil-presentation p {
+    font-size: 18px;
+    line-height: 1.8;
+}
+
+/* Section compétences */
+#skills {
+    padding: 50px 0;
+    background-color: #1abc9c;
+    color: white;
+}
+
+/* Titre de la section */
+.skills-title h2 {
+    text-align: center;
+    margin-bottom: 40px;
+    font-size: 36px;
+}
+
+/* Conteneur principal des compétences */
+.skills-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start; /* Aligner les items au début verticalement */
+    padding: 20px;
+    gap: 30px;
+}
+
+/* Conteneur de chaque catégorie de compétences */
+.skill-box {
+    flex: 1;
+}
+
+/* Style de chaque compétence */
+.skill-item {
+    margin-bottom: 20px;
+    display: flex;
+    align-items: center;
+    gap: 10px; /* Espacement entre l'icône et la barre */
+}
+
+/* Style du titre de chaque catégorie */
+.skill-box h3 {
+    font-size: 24px;
+    margin-bottom: 10px;
+    color: #fff;
+}
+
+/* Icônes de compétence */
+.icon i {
+    font-size: 30px;
+    color: white;
+}
+
+/* Barre de progression */
+.skill-bar {
+    background-color: rgba(255, 255, 255, 0.2);
+    border-radius: 25px;
+    overflow: hidden;
+    width: 100%;
+    height: 10px;
+    margin-top: 5px;
+}
+
+/* Barre de chargement animée */
+.skill-bar-chargement {
+    height: 100%;
+    background-color: white;
+    border-radius: 5px;
+    width: 0; /* Initial width */
+    transition: width 1.5s ease-in-out; /* Animation effect */
+}
+
+.glightbox-close-btn {
+    position: absolute;
+    top: 10px;
+    right: 20px;
+    background-color: rgba(0, 0, 0, 0.7);
+    border: none;
+    color: white;
+    padding: 10px 15px;
+    cursor: pointer;
+    font-size: 16px;
+    z-index: 9999;
+}
+
+/* Carousel section */
+#carousel {
+    background-image: url('image/background.webp');
+    background-size: cover;
+    background-position: center;
+    padding: 50px 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.carousel-container {
+    width: 100%;
+    max-width: 600px;
+    overflow: hidden;
+    position: relative;
+    border-radius: 10px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+    background-color: rgba(255, 255, 255, 0.8);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.carousel {
+    display: flex;
+    transition: transform 0.8s ease-in-out;
+    width: 300%;
+}
+
+.carousel-item {
+    flex: 0 0 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding: 30px;
+    box-sizing: border-box;
+    background-color: #fff;
+    border-left: 5px solid #ccc;
+    font-family: 'Arial', sans-serif;
+    min-height: 200px; /* Ajustez la hauteur minimale si nécessaire */
+}
+
+blockquote {
+    font-style: italic;
+    font-size: 1.4em;
+    color: #555;
+    margin: 0;
+    padding: 0;
+}
+
+cite {
+    display: block;
+    margin-top: 15px;
+    font-weight: bold;
+    color: #333;
+    font-size: 1.1em;
+}
+
+/* Animation de transition */
+.carousel-item {
+    opacity: 0;
+    transform: scale(0.95);
+    transition: opacity 0.5s ease, transform 0.5s ease;
+}
+
+.carousel-item.active {
+    opacity: 1;
+    transform: scale(1);
+}
+
+.control-arrow {
+    background-color: #1abc9c;
+    color: white;
+    padding: 10px;
+    border: none;
+    cursor: pointer;
+}
+.txt-display{
+    font-size: 25px;
+    color: white;
+    text-shadow: 0 0 10px rgba(255, 255, 255, 0.8),
+                 0 0 20px rgba(255, 255, 255, 0.6),
+                 0 0 30px rgba(255, 255, 255, 0.4);
+}
+
+.control-arrow:hover {
+    background-color: #16a085;
+}
+
+/* Portfolio section */
+#portfolio {
+    padding: 50px;
+    background-color: #f9f9f9;
+    text-align: center;
+}
+
+
+
+
+
+.thumbs-container {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+
+.thumb {
+    position: relative;
+    width: 300px;
+    overflow: hidden;
+    border-radius: 10px;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease;
+}
+
+.thumb:hover {
+    transform: scale(1.05);
+}
+
+.thumb a {
+    text-decoration: none;
+    color: inherit;
+}
+
+.thumb-preview {
+    position: absolute;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.7);
+    color: white;
+    width: 100%;
+    padding: 10px;
+    box-sizing: border-box;
+    text-align: center;
+    font-size: 1.1em;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.thumb:hover .thumb-preview {
+    opacity: 1;
+}
+
+.small-image {
+    width: 100%;
+    height: auto;
+    border-radius: 10px;
+    display: block;
+    transition: filter 0.3s ease;
+}
+
+.thumb:hover .small-image {
+    filter: brightness(0.7);
+}
+/* Contact section */
+#contact {
+    background-color: #fff;
+    padding: 50px 0;
+}
+
+.title {
+    font-size: 36px;
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.contact-description {
+    text-align: center;
+    margin-bottom: 30px;
+    font-size: 18px;
+    color: #333;
+}
+.form-content-right {
+    padding: 20px; /* Ajoute de l'espace autour du contenu */
+    background-color: #f4f4f4; /* Couleur de fond douce */
+    border-radius: 8px; /* Arrondit les coins */
+}
+
+.contact-box {
+    display: flex;
+    flex-direction: column; /* Aligne les items en colonne */
+}
+
+.contact-detail-item {
+    display: flex; /* Utilise Flexbox pour aligner les icônes et le texte */
+    align-items: center; /* Centre verticalement le contenu */
+    margin-bottom: 15px; /* Espace entre les items */
+    color: #333; /* Couleur du texte */
+}
+
+.contact-detail-item i {
+    font-size: 24px; /* Taille de l'icône */
+    margin-right: 10px; /* Espace entre l'icône et le texte */
+    color: #007bff; /* Couleur des icônes */
+}
+
+.contact-detail-item p {
+    margin: 0; /* Enlève la marge par défaut du paragraphe */
+    font-size: 16px; /* Taille de la police du texte */
+}
+
+.form-box {
+    display: flex;
+    justify-content: center;
+    align-items: flex-start; /* Alignement au début */
+    gap: 20px; /* Espacement entre les colonnes */
+    max-width: 800px; /* Largeur maximale */
+    margin: 0 auto; /* Centrer le formulaire */
+    background-color: #fff; /* Fond blanc */
+    border-radius: 10px; /* Coins arrondis */
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1); /* Ombre douce */
+    padding: 30px; /* Espacement interne */
+}
+
+.form-content-detail {
+    margin-bottom: 20px; /* Espacement entre les champs */
+}
+
+input[type="text"],
+input[type="tel"],
+input[type="email"],
+textarea {
+    width: 100%; /* Prend toute la largeur */
+    padding: 10px; /* Espacement interne */
+    border: 1px solid #ccc; /* Bordure grise */
+    border-radius: 5px; /* Coins arrondis */
+    font-size: 16px; /* Taille de police */
+    transition: border-color 0.3s; /* Transition de couleur de bordure */
+}
+
+input[type="text"]:focus,
+input[type="tel"]:focus,
+input[type="email"]:focus,
+textarea:focus {
+    border-color: #66b3ff; /* Couleur de la bordure au focus */
+    outline: none; /* Enlève le contour par défaut */
+}
+
+textarea {
+    height: 100px; /* Hauteur pour la zone de texte */
+    resize: none; /* Enlève le redimensionnement */
+}
+
+.btn {
+    background-color: #66b3ff; /* Couleur du bouton */
+    color: white; /* Couleur du texte du bouton */
+    border: none; /* Pas de bordure */
+    padding: 12px 20px; /* Espacement interne */
+    border-radius: 5px; /* Coins arrondis */
+    font-size: 16px; /* Taille de police */
+    cursor: pointer; /* Curseur pointer */
+    transition: background-color 0.3s; /* Transition de couleur de fond */
+}
+
+.btn:hover {
+    background-color: #007bb5; /* Couleur du bouton au survol */
+}
+
+.form-content-right {
+    flex: 1; /* Prend tout l'espace restant */
+}
+.icon {
+    font-size: 30px; /* Ajustez la taille */
+    margin: 10px; /* Espace autour de l'icône */
+    color: #000; /* Couleur de l'icône */
+}
+
+.contact-box {
+    background-color: #f9f9f9; /* Fond de la boîte de contact */
+    border-radius: 10px; /* Coins arrondis */
+    padding: 20px; /* Espacement interne */
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1); /* Ombre douce */
+}
+
+.contact-detail-item {
+    display: flex; /* Utiliser Flexbox pour les icônes et le texte */
+    align-items: center; /* Centrer verticalement */
+    margin-bottom: 15px; /* Espacement entre les éléments */
+}
+
+.contact-detail-item i {
+    font-size: 20px; /* Taille de l'icône */
+    margin-right: 10px; /* Espacement entre l'icône et le texte */
+    color: #66b3ff; /* Couleur des icônes */
+}
+
+.contact-detail-item p {
+    margin: 0; /* Enlève la marge par défaut */
+    font-size: 16px; /* Taille de police */
+}
+
+.submit-form-btn {
+    background-color: #1abc9c;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    cursor: pointer;
+    border-radius: 25px;
+    text-transform: uppercase;
+}
+
+.submit-form-btn:hover {
+    background-color: #16a085;
+}
+
+/* Footer section */
+.footer {
+    background-color: #1a1a1a;
+    color: white;
+    padding: 20px 0;
+    text-align: center;
+}
+
+.footer ul {
+    list-style: none;
+    padding: 0;
+}
+
+.footer ul li {
+    display: inline;
+    margin: 0 10px;
+    font-size: 14px;
+}
+
+.footer p {
+    font-size: 14px;
+}
+.txt-rotate > .wrap {
+    border-right: 0.08em solid #666;
+    animation: blink-caret 0.7s step-end infinite;
+    color: #c6e2ff;
+   
+      font-family: 'PixelFont', monospace; /* Utilise une police pixellisée ou monospace */
+      color: #00ccff; /* Couleur bleue similaire */
+      font-size: 20px; /* Ajuste la taille selon tes besoins */
+      text-transform: uppercase; /* Tout en majuscules */
+    
+      letter-spacing: 2px; /* Espacement des lettres pour un effet espacé */
+    }
+      @font-face {
+        font-family: 'PixelFont';
+        src: url('path-to-pixel-font.ttf') format('truetype');
+    
+    
+    
+      
+    
+}
+
+@keyframes blink-caret {
+    from, to { border-color: transparent }
+    50% { border-color: #666; }
+}
+#backToTop {
+    display: none; /* Cacher le bouton par défaut */
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    z-index: 100;
+    background-color: #1abc9c;
+    color: #fff;
+    border: none;
+    border-radius: 50%;
+    padding: 10px;
+    font-size: 18px;
+    cursor: pointer;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.3);
+    transition: background-color 0.3s;
+}
+
+#backToTop:hover {
+    background-color: #16a085;
+}
